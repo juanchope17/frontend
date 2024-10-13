@@ -8,5 +8,10 @@ export default defineConfig({
   server: {
     port: process.env.PORT || 4000, // Puerto del servidor de desarrollo
   },
+
+  build: {
+    outDir: "dist", // Opcional, define la carpeta de salida
+  },
+
   base: "/",
 });
