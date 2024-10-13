@@ -6,6 +6,12 @@ export default defineConfig({
   plugins: [react()],
 
   server: {
-    port: 4321, // Cambia este número al puerto que prefieras
+    port: process.env.PORT || 4000, // Puerto del servidor de desarrollo
   },
+
+  build: {
+    outDir: "dist", // Opcional, define la carpeta de salida
+  },
+
+  base: "./", // Asegúrate de este valor para servir desde rutas relativas en archivos locales
 });
