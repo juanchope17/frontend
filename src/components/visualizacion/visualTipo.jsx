@@ -6,15 +6,12 @@ export default function VisualTipo() {
   const [VisualTipo, setVisualTipo] = useState([]);
 
   const getTipos = async () => {
-    const response = await fetch(
-      "https://cerulean-malasada-00ea89.netlify.app/api/tipo",
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
+    const response = await fetch("http://localhost:5001/api/tipo", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
       },
-    );
+    });
     const data = await response.json();
     setVisualTipo(data);
     if (!response.ok) {

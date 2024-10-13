@@ -31,16 +31,13 @@ export default function EdicionTipo() {
       fechaActualizacion: fechaActualizacion,
     };
 
-    const response = await fetch(
-      `https://cerulean-malasada-00ea89.netlify.app/api/tipo/${id}`,
-      {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
+    const response = await fetch(`http://localhost:5001/api/tipo/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
       },
-    );
+      body: JSON.stringify(data),
+    });
 
     if (!response.ok) {
       console.log("Tipo no fue creado con exito");
