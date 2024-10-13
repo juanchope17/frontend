@@ -66,13 +66,16 @@ export default function EdicionMedia() {
       actualizadoEn: actualizadoEn,
     };
 
-    const response = await fetch(`http://localhost:5001/api/media/${id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
+    const response = await fetch(
+      `https://backend-production-bef4.up.railway.app/api/media/${id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
       },
-      body: JSON.stringify(data),
-    });
+    );
     if (!response.ok) {
       console.log("Tipo Creado con exito");
     }

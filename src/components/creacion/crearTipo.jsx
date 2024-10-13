@@ -30,7 +30,7 @@ export default function FormularioTipo() {
     };
 
     const response = await fetch(
-      "http://backend-production-bef4.up.railway.app/api/tipo",
+      "https://backend-production-bef4.up.railway.app/api/tipo",
       {
         method: "POST",
         headers: {

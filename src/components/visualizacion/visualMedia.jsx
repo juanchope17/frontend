@@ -5,12 +5,15 @@ export default function VisualMedia() {
   const [VisualMedia, setVisualMedia] = useState([]);
 
   const getMedia = async () => {
-    const response = await fetch("http://localhost:5001/api/media", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
+    const response = await fetch(
+      "https://backend-production-bef4.up.railway.app/api/media",
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
       },
-    });
+    );
     const data = await response.json();
     setVisualMedia(data);
     if (!response.ok) {
@@ -19,7 +22,7 @@ export default function VisualMedia() {
   };
 
   const eliminar = (id) => {
-    fetch(`http://localhost:5001/api/media/${id}`, {
+    fetch(`https://backend-production-bef4.up.railway.app/api/media/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

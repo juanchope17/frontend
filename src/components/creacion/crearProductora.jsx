@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 export default function FormularioProductora() {
   const [slogan, setSlogan] = useState("");
@@ -30,7 +30,6 @@ export default function FormularioProductora() {
   // En esta función manejamos el envío del formulario
   const onsubmit = async (event) => {
     event.preventDefault();
-    
 
     // Creamos el objeto de datos que enviaremos al servidor
     const data = {
@@ -45,20 +44,23 @@ export default function FormularioProductora() {
     // Uso el try-catch para capturar los errores
     try {
       // Enviamos las solicitudes al servidor utilizando fetch
-      const response = await fetch('http://localhost:5001/api/productora', {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        "https://backend-production-bef4.up.railway.app/api/productora",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          // Convertimos el objeto de datos a formato JSON
+          body: JSON.stringify(data),
         },
-        // Convertimos el objeto de datos a formato JSON
-        body: JSON.stringify(data),
-      });
+      );
 
-      if(!response.ok) {
-        console.log('Productora no ha sido creado');
-      };
+      if (!response.ok) {
+        console.log("Productora no ha sido creado");
+      }
     } catch (error) {
-      console.log('Error en la solicitud: ' + error);
+      console.log("Error en la solicitud: " + error);
     }
   };
 

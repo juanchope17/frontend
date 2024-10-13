@@ -5,12 +5,15 @@ export default function VisualProductora() {
   const [VisualProductora, setVisualProductora] = useState([]);
 
   const getProductora = async () => {
-    const response = await fetch("http://localhost:5001/api/productora", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
+    const response = await fetch(
+      "https://backend-production-bef4.up.railway.app/api/productora",
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
       },
-    });
+    );
     const data = await response.json();
     setVisualProductora(data);
     if (!response.ok) {
@@ -19,12 +22,15 @@ export default function VisualProductora() {
   };
 
   const eliminar = (id) => {
-    fetch(`http://localhost:5001/api/productora/${id}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
+    fetch(
+      `https://backend-production-bef4.up.railway.app/api/productora/${id}`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
       },
-    });
+    );
     setVisualProductora(
       VisualProductora.filter((productora) => productora._id !== id),
     );

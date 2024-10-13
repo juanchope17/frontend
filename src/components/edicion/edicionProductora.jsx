@@ -42,13 +42,16 @@ export default function EdicionProductora() {
       estado: estado,
     };
 
-    const response = await fetch(`http://localhost:5001/api/productora/${id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
+    const response = await fetch(
+      `https://backend-production-bef4.up.railway.app/api/productora/${id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
       },
-      body: JSON.stringify(data),
-    });
+    );
   };
   return (
     <React.Fragment>

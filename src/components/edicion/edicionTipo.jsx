@@ -32,7 +32,7 @@ export default function EdicionTipo() {
     };
 
     const response = await fetch(
-      `http://backend-production-bef4.up.railway.app/api/tipo/${id}`,
+      `https://backend-production-bef4.up.railway.app/api/tipo/${id}`,
       {
         method: "PUT",
         headers: {

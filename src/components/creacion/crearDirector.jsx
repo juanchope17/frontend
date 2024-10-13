@@ -31,13 +31,16 @@ export default function FormularioDirector() {
       fechaActualizacion: fechaActualizacion,
     };
 
-    const response = await fetch("http://localhost:5001/api/director", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
+    const response = await fetch(
+      "https://backend-production-bef4.up.railway.app/api/director",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
       },
-      body: JSON.stringify(data),
-    });
+    );
 
     if (!response.ok) {
       console.log("Director no fue creado con exito");

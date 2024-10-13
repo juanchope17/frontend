@@ -37,13 +37,16 @@ export default function EdicionGerero() {
       estado: estado,
     };
 
-    const response = await fetch(`http://localhost:5001/api/genero/${id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
+    const response = await fetch(
+      `https://backend-production-bef4.up.railway.app/api/genero/${id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
       },
-      body: JSON.stringify(data),
-    });
+    );
 
     if (!response.ok) {
       console.log("Genero no fue creado con exito");

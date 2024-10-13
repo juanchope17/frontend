@@ -6,12 +6,15 @@ export default function VisualDirector() {
   const [VisualDirector, setVisualDirector] = useState([]);
 
   const getDirectores = async () => {
-    const response = await fetch("http://localhost:5001/api/director", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
+    const response = await fetch(
+      "https://backend-production-bef4.up.railway.app/api/director",
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
       },
-    });
+    );
     const data = await response.json();
     setVisualDirector(data);
     if (!response.ok) {
@@ -20,7 +23,7 @@ export default function VisualDirector() {
   };
 
   const eliminar = (id) => {
-    fetch(`http://localhost:5001/api/director/${id}`, {
+    fetch(`https://backend-production-bef4.up.railway.app/api/director/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

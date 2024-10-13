@@ -6,12 +6,15 @@ export default function VisualTipo() {
   const [VisualTipo, setVisualTipo] = useState([]);
 
   const getTipos = async () => {
-    const response = await fetch("http://localhost:5001/api/tipo", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
+    const response = await fetch(
+      "https://backend-production-bef4.up.railway.app/api/tipo",
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
       },
-    });
+    );
     const data = await response.json();
     setVisualTipo(data);
     if (!response.ok) {
@@ -20,7 +23,7 @@ export default function VisualTipo() {
   };
 
   const eliminar = (id) => {
-    fetch(`http://backend-production-bef4.up.railway.app/api/tipo/${id}`, {
+    fetch(`https://backend-production-bef4.up.railway.app/api/tipo/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

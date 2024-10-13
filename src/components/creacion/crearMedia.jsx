@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 export default function FormularioMedia() {
   const [title, setTitle] = useState("");
@@ -49,9 +49,9 @@ export default function FormularioMedia() {
 
   const onsubmit = async (event) => {
     event.preventDefault();
-    
+
     const data = {
-      title : title,
+      title: title,
       sinopsis: sinopsis,
       url: url,
       imagenPelicula: imagenPelicula,
@@ -63,24 +63,26 @@ export default function FormularioMedia() {
       creadoEn: creadoEn,
       actualizadoEn: actualizadoEn,
     };
-    
-    try{
-      const response = await fetch("http://localhost:5001/api/media", {
-        method: "POST",
-        headers:{
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
 
-      if (!response.ok){
+    try {
+      const response = await fetch(
+        "https://backend-production-bef4.up.railway.app/api/media",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        },
+      );
+
+      if (!response.ok) {
         console.log("Tipo Creado con exito");
-     };
+      }
     } catch (error) {
-      console.log('Error en la solicitud:', error);
+      console.log("Error en la solicitud:", error);
     }
   };
-
 
   return (
     <React.Fragment>
