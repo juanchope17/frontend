@@ -20,7 +20,7 @@ export default function VisualTipo() {
   };
 
   const eliminar = (id) => {
-    fetch(`http://localhost:5001/api/tipo/${id}`, {
+    fetch(`http://backend-production-bef4.up.railway.app/api/tipo/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

@@ -29,13 +29,16 @@ export default function FormularioTipo() {
       fechaActualizacion: fechaActualizacion,
     };
 
-    const response = await fetch("http://localhost:5001/api/tipo", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
+    const response = await fetch(
+      "http://backend-production-bef4.up.railway.app/api/tipo",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
       },
-      body: JSON.stringify(data),
-    });
+    );
 
     if (!response.ok) {
       console.log("No fue creado un tipo");
