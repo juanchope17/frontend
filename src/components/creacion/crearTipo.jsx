@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 export default function FormularioTipo() {
   const [nombre, setNombre] = useState("");
@@ -27,22 +27,24 @@ export default function FormularioTipo() {
       descripcion: descripcion,
       fechaCreacion: fechaCreacion,
       fechaActualizacion: fechaActualizacion,
-    }
+    };
 
-    const response = await fetch('http://localhost:5001/api/tipo', {
-      method:"POST",
-      headers: {
-        "Content-Type": "application/json",
+    const response = await fetch(
+      "https://cerulean-malasada-00ea89.netlify.app/api/tipo",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
       },
-      body: JSON.stringify(data),
-    });
+    );
 
-    if(!response.ok) {
-      console.log('No fue creado un tipo')
+    if (!response.ok) {
+      console.log("No fue creado un tipo");
     }
-
   };
-  
+
   return (
     <React.Fragment>
       <div className="divFormularioTipo">
