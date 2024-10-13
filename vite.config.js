@@ -6,6 +6,6 @@ export default defineConfig({
   plugins: [react()],
 
   server: {
-    port: process.env.PORT, // Cambia este número al puerto que prefieras
+    port: 4321, // Cambia este número al puerto que prefieras
   },
 });
